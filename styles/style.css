@@ -17,11 +17,25 @@ body {
 }
 
 .header {
-  padding: 31.25em; /* 500px / 16px = 31.25em */
+  padding: 18em;
   background-image: url(https://imgbly.com/ib/JnvKt9TXq2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Медиа-запрос для планшетов с шириной экрана от 768px до 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding: 3em; /* Оптимальное значение паддинга для планшетов */
+  }
+}
+
+/* Медиа-запрос для устройств с шириной экрана меньше 768px (например, мобильные телефоны) */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 1em; /* Оптимальное значение паддинга для мобильных устройств */
+  }
 }
 
 h1 {
