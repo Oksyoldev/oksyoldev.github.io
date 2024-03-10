@@ -3,39 +3,35 @@ html {
   font-family: Vollkorn: здесь должно быть имя шрифта из Google fonts
 }
 
-h1 {
-  font-size: 60px;
-    text-align: center;
+.logo {
+  width: 100px;
+  height: 100px;
+  float: left;
 }
 
-p,
-li {
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+.header {
+  background-color: black;
+  padding: 500px;
 }
 
-html {
-  background-color: #BC19BC;
-}
-
-body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #ff9500;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
-}
-
-h1 {
+nav ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 20px 0;
-  color: #BC19BC;
-  text-shadow: 3px 3px 1px black;
 }
 
-img {
-  width: 300px;
-  display: block;
-  margin: 0 auto;
+nav li {
+  display: inline;
+  margin-right: 10px;
+  float: right;
+}
+
+.main {
+  background-color: blue;
+  padding: 700px;
+}
+
+.footer {
+  background-color: red;
+  padding: 100px;
 }
