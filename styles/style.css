@@ -73,6 +73,11 @@ nav li {
   float: right;
 }
 
+ul li a {
+  text-decoration: none;
+  color: greenyellow; 
+}
+
 .main {
   background-color: blue;
   padding: 2em;
