@@ -1,20 +1,37 @@
 html {
   font-size: 10px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
-  font-family: Vollkorn: здесь должно быть имя шрифта из Google fonts
+  font-family: 'Bruno Ace SC', sans-serif;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   width: 100px;
   height: 100px;
-  float: left;
 }
 
 .header {
-  background-color: black;
   padding: 500px;
+  background-image: url(https://imgbly.com/ib/JnvKt9TXq2.jpg);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 100px;
 }
 
 nav ul {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
