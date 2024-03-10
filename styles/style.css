@@ -1,5 +1,5 @@
 html {
-  font-size: 10px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
+  font-size: 16px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
   font-family: 'Bruno Ace SC', sans-serif;
 }
 
@@ -17,8 +17,11 @@ body {
 }
 
 .header {
-  padding: 500px;
+  padding: 31.25em; /* 500px / 16px = 31.25em */
   background-image: url(https://imgbly.com/ib/JnvKt9TXq2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1 {
