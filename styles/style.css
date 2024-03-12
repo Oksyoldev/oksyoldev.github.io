@@ -1,6 +1,7 @@
 html {
   font-size: 16px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
   font-family: 'Bruno Ace SC', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 }
 
 .logo {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   width: 100px;
@@ -59,18 +60,18 @@ h2 {
 
 nav ul {
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
-  display: inline;
   margin-right: 10px;
-  float: right;
 }
 
 ul li a {
