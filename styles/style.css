@@ -41,7 +41,10 @@ body {
 
 .slidemenu {
   font-family: arial, sans-serif;
-  max-width: 600px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
   position: fixed;
   top: 0;
   right: 0;
@@ -49,7 +52,7 @@ body {
 }
 
 .slidemenu label {
-  width: 20%;
+  width: 100%;
   text-align: center;
   display: inline-block;
   vertical-align: top;

@@ -17,3 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.icon').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+      let url = icon.getAttribute('data-url');
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
+});
