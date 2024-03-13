@@ -31,6 +31,66 @@ body {
   background-position: center;
 }
 
+.clear {
+  clear: both;
+}
+
+.slide-toggle {
+  display: none;
+}
+
+.slidemenu {
+  font-family: arial, sans-serif;
+  max-width: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.slidemenu label {
+  width: 20%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  color: #333;
+  opacity: 0.5;
+  padding: 5px;
+}
+
+.slidemenu label:hover {
+  cursor: pointer;
+  color: #666;
+}
+
+.slidemenu label a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+.slidemenu label .icon {
+  font-size: 20px;
+  border: solid 2px #333;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 50px;
+}
+
+.slidemenu label, .slider {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+}
+
+.slidemenu .slide-toggle:checked + label{
+  opacity: 1;
+}
+
 
 /* Медиа-запрос для планшетов с шириной экрана от 768px до 1024px */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -58,26 +118,6 @@ h2 {
   font-size: 60px;
 }
 
-nav ul {
-  font-size: 20px;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-nav li {
-  margin-right: 10px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: greenyellow; 
-}
 
 .main {
   background-color: blue;
