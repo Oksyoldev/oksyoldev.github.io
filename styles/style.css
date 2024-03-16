@@ -7,6 +7,59 @@ html {
 body {
   margin: 0;
   box-sizing: border-box;
+  text-align: center;
+}
+
+
+
+h1 {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  width: 550px; /* Увеличьте значение ширины блока на ваше усмотрение */
+  max-width: 730px;
+  height: 95px;
+  font-size: 65px;
+  color: red;
+}
+
+h1:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+h1:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+h1:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:1000px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:12000px;}
 }
 
 .logo {
@@ -17,11 +70,7 @@ body {
   height: 100px;
 }
 
-.heading {
-  font-size: 95px;
-  color: white;
-  text-align: center;
-}
+
 
 .header {
   padding: 18em;
@@ -95,6 +144,7 @@ body {
 }
 
 
+
 /* Медиа-запрос для планшетов с шириной экрана от 768px до 1024px */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .header {
@@ -109,11 +159,7 @@ body {
   }
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-size: 100px;
-}
+
 
 h2 {
   color: white;
