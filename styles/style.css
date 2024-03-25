@@ -159,14 +159,6 @@ h1:last-of-type span {
 }
 
 
-
-h2 {
-  color: white;
-  text-align: center;
-  font-size: 60px;
-}
-
-
 .main {
   background-color: blue;
   padding: 2em;
@@ -175,9 +167,66 @@ h2 {
 
 .price {
   background-color: black;
-  padding: 2em;
-  height: 100vh;
+  padding: 10em;
+  height: 200vh;
 }
+
+.image-block {
+  /* border: 1px solid red;*/
+}
+
+.image-item {
+  text-align: center;
+  margin: 50px;
+}
+
+.image-item img {
+  width: 350px;
+  height: 350px;
+}
+
+.image-item p {
+  margin-top: 5px;
+  color: white;
+}
+
+.text-block {
+  text-align: center; /* Центрирование текста */
+  margin-top: 10px; /* Отступ сверху */
+}
+
+.text-block p {
+  font-size: 16px; /* Размер текста */
+  color: white;
+}
+
+.text-block ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступ у списка */
+}
+
+.text-block li {
+  margin: 5px 0; /* Отступы между пунктами списка */
+  color: white;
+}
+.text-block {
+  text-align: center; /* Центрирование текста */
+  margin-top: 10px; /* Отступ сверху */
+}
+
+.text-block p {
+  font-size: 16px; /* Размер текста */
+}
+
+.text-block ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступ у списка */
+}
+
+.text-block li {
+  margin: 5px 0; /* Отступы между пунктами списка */
+}
+
 
 .footer {
   background-color: red;
