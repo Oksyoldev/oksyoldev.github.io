@@ -1,3 +1,4 @@
+@import url(https://s1.cdn.ryanboylett.co.uk/fonts/fontawesome/fontawesome.css);
 html {
   font-size: 16px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
   font-family: 'Bruno Ace SC', sans-serif;
@@ -173,7 +174,6 @@ h2 {
   height: 100vh;
 }
 
-@import url(https://s1.cdn.ryanboylett.co.uk/fonts/fontawesome/fontawesome.css);
 body { background: url(https://s1.cdn.ryanboylett.co.uk/images/wallpapers/006.jpg) }
 .music-player { position: absolute !important; top: 50%; left: 50%; margin: -207px 0 0 -207px }
 
@@ -424,9 +424,7 @@ body { background: url(https://s1.cdn.ryanboylett.co.uk/images/wallpapers/006.jp
   margin: 18px 0 5px;
 }
 
-.music-player > .dash > .info > small { font-size: 10px }@import url(https://s1.cdn.ryanboylett.co.uk/fonts/fontawesome/fontawesome.css);
-body { background: url(https://s1.cdn.ryanboylett.co.uk/images/wallpapers/006.jpg) }
-.music-player { position: absolute !important; top: 50%; left: 50%; margin: -207px 0 0 -207px }
+
 
 .music-player
 {
