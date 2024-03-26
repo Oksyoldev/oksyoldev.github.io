@@ -168,16 +168,30 @@ h1:last-of-type span {
 .price {
   background-color: black;
   padding: 10em;
-  height: 200vh;
+  height: 170vh;
 }
 
 .image-block {
-  /* border: 1px solid red;*/
+  margin-left: 500px;
 }
 
 .image-item {
   text-align: center;
-  margin: 50px;
+  margin: 50px auto;
+  max-width: 800px
+}
+
+.image-item .first {
+  margin-left: -600px;
+  margin-top: -100px;
+}
+
+.image-item .two {
+  margin-right: -100px;
+}
+
+.image-item .three {
+  margin-left: -600px;
 }
 
 .image-item img {
