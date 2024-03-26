@@ -160,9 +160,77 @@ h1:last-of-type span {
 
 
 .main {
-  background-color: blue;
+  background-color: white;
   padding: 2em;
   height: 100vh;
+}
+
+.musicplayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5%;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: #fe2b0d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.info {
+  font-size: 20px;
+  margin-top: -20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info p {
+  align-self: flex-start;
+  margin: 0;
+  margin-top: -20px;
+}
+
+
+.buy-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #fe2b0d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5%;
+  font-size: 17px;
+}
+
+.button-text {
+  margin-right: 5px; / Установите отступ между иконкой и текстом по вашему усмотрению /
 }
 
 .price {
