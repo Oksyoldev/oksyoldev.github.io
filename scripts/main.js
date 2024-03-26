@@ -27,4 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+const playBtn = document.querySelector('.play-btn');
+const audio = document.getElementById('audio');
 
+playBtn.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+});
