@@ -33,7 +33,11 @@ const audio = document.getElementById('audio');
 playBtn.addEventListener('click', function() {
   if (audio.paused) {
     audio.play();
+    playBtn.querySelector('.bi-play-fill').style.display = 'none';
+    playBtn.querySelector('.bi-pause-fill').style.display = 'inline-block';
   } else {
     audio.pause();
+    playBtn.querySelector('.bi-play-fill').style.display = 'inline-block';
+    playBtn.querySelector('.bi-pause-fill').style.display = 'none';
   }
 });

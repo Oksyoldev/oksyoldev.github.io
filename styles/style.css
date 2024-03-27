@@ -20,7 +20,7 @@ h1 {
   max-width: 730px;
   height: 95px;
   font-size: 65px;
-  color: red;
+  color: #fe2b0d;
 }
 
 h1:first-of-type {    /* For increasing performance 
@@ -190,6 +190,8 @@ h1:last-of-type span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
   padding: 10px;
   background-color: #fe2b0d;
   color: white;
@@ -197,6 +199,11 @@ h1:last-of-type span {
   border-radius: 50%;
   cursor: pointer;
 }
+
+.bi-pause-fill {
+  display: none;
+}
+
 
 .info {
   font-size: 20px;
