@@ -200,6 +200,7 @@ h1:last-of-type span {
   cursor: pointer;
 }
 
+
 .bi-pause-fill {
   display: none;
 }
@@ -237,6 +238,93 @@ h1:last-of-type span {
 
 .button-text {
   margin-right: 5px; / Установите отступ между иконкой и текстом по вашему усмотрению /
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(106, 50, 159, 0.4);
+  padding: 18px;
+  text-align: center;
+  z-index: 9999;
+}
+
+.like-btn {
+  position: relative;
+  left: -800px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: none;
+  color: white;
+}
+
+.like-btn:hover {
+  color:#fe2b0d;
+  transition: 0.7s;
+}
+
+.back-btn {
+  position: relative;
+  left: -790px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: none;
+  color: white;
+}
+
+.back-btn:hover {
+  color: #fe2b0d;
+  transition: 0.7s;
+}
+
+.play-pause-btn {
+  position: relative;
+  left: -780px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: none;
+  color: white;
+}
+
+.play-pause-btn:hover {
+  color: #fe2b0d;
+  transition: 0.7s;
+}
+
+.next-btn {
+  position: relative;
+  left: -770px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: none;
+  color: white;
+}
+
+.next-btn:hover {
+  color: #fe2b0d;
+  transition: 0.7s;
 }
 
 .price {

@@ -28,16 +28,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 const playBtn = document.querySelector('.play-btn');
+const playPauseBtn = document.querySelector('.play-pause-btn');
 const audio = document.getElementById('audio');
+let isPlaying = false;
 
 playBtn.addEventListener('click', function() {
-  if (audio.paused) {
+  if (!isPlaying) {
     audio.play();
-    playBtn.querySelector('.bi-play-fill').style.display = 'none';
-    playBtn.querySelector('.bi-pause-fill').style.display = 'inline-block';
   } else {
     audio.pause();
-    playBtn.querySelector('.bi-play-fill').style.display = 'inline-block';
-    playBtn.querySelector('.bi-pause-fill').style.display = 'none';
   }
+  togglePlayButtons();
 });
+
+playPauseBtn.addEventListener('click', function() {
+  if (!isPlaying) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+  togglePlayButtons();
+});
+
+function togglePlayButtons() {
+  isPlaying = !isPlaying;
+  playBtn.querySelector('.bi-play-fill').style.display = isPlaying ? 'none' : 'inline-block';
+  playBtn.querySelector('.bi-pause-fill').style.display = isPlaying ? 'inline-block' : 'none';
+  playPauseBtn.querySelector('.bi-play-fill').style.display = isPlaying ? 'none' : 'inline-block';
+  playPauseBtn.querySelector('.bi-pause-fill').style.display = isPlaying ? 'inline-block' : 'none';
+}
+
+
+
+
