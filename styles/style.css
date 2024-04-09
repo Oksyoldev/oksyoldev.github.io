@@ -68,6 +68,7 @@ h1:last-of-type span {
   left: 10px;
   width: 100px;
   height: 100px;
+  z-index: 999;
 }
 
 
@@ -160,21 +161,31 @@ h1:last-of-type span {
 
 
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   padding: 2em;
   height: 100vh;
 }
 
-.musicplayer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.beats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px; /* Расстояние между элементами */
 }
 
 .image-container {
   position: relative;
   text-align: center;
 }
+
+.image-info-container {
+  display: flex;
+  align-items: center;
+}
+
+
 
 .image-container img {
   width: 150px;
@@ -239,6 +250,7 @@ h1:last-of-type span {
 .button-text {
   margin-right: 5px; / Установите отступ между иконкой и текстом по вашему усмотрению /
 }
+
 
 .player {
   position: fixed;
