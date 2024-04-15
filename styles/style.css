@@ -252,93 +252,6 @@ h1:last-of-type span {
 }
 
 
-.player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(106, 50, 159, 0.4);
-  padding: 18px;
-  text-align: center;
-  z-index: 9999;
-}
-
-.like-btn {
-  position: relative;
-  left: -800px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none;
-  color: white;
-}
-
-.like-btn:hover {
-  color:#fe2b0d;
-  transition: 0.7s;
-}
-
-.back-btn {
-  position: relative;
-  left: -790px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none;
-  color: white;
-}
-
-.back-btn:hover {
-  color: #fe2b0d;
-  transition: 0.7s;
-}
-
-.play-pause-btn {
-  position: relative;
-  left: -780px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none;
-  color: white;
-}
-
-.play-pause-btn:hover {
-  color: #fe2b0d;
-  transition: 0.7s;
-}
-
-.next-btn {
-  position: relative;
-  left: -770px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none;
-  color: white;
-}
-
-.next-btn:hover {
-  color: #fe2b0d;
-  transition: 0.7s;
-}
-
 .price {
   background-color: black;
   padding: 10em;
@@ -415,6 +328,226 @@ h1:last-of-type span {
   margin: 5px 0; /* Отступы между пунктами списка */
 }
 
+
+.player {
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 70px;
+  width: 100%;
+  align-items: center;
+  padding: 0px 20px;
+  z-index: 999999;
+  box-shadow: 0 2px 12px purple;
+}
+
+.player .wave {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.player .wave .wave1 {
+  width: 9px;
+  height: 30px;
+  margin-right: 9px;
+  border-radius: 30px 30px 0px 0px;
+  background: blue;
+  animation: unset;
+}
+
+.player .wave .wave1:nth-child(2) {
+  height: 39px;
+ /* animation-delay: .4s;*/
+}
+
+.player .wave .wave1:nth-child(3) {
+  height: 24px;
+  /*animation-delay: .8s;*/
+}
+
+/* javascript class wave */
+.player .active2 .wave1 {
+  animation: wave .5s linear infinite;
+}
+
+.player .active2 .wave1:nth-child(2) {
+  animation-delay: .4s;
+}
+
+.player .active2 .wave1:nth-child(3) {
+  animation-delay: .8s;
+}
+
+@keyframes wave {
+  0%{
+    height: 30px;
+  }
+  50%{
+    height: 45px;
+  }
+  100%{
+    height: 30px;
+  }
+}
+
+.player img {
+  width: 60px;
+  height: 60px;
+}
+
+.player h2 {
+  width: 130px;
+  font-size: 30px;
+  margin-left: -10px;
+  color: purple;
+  line-height: 15px;
+}
+
+.player .icon {
+  font-size: 30px;
+  color: #fe2b0d;
+  margin: 0px 20px 0px 20px;
+}
+
+.player .icon .bi {
+  cursor: pointer;
+  outline: none;
+}
+
+.player .icon .bi:nth-child(2){
+  border: 1px solid rgb(105, 105, 170,.1);
+  border-radius: 50%;
+  padding: 1px 3px 0px 6px;
+  margin: 0px 5px;
+  transition: .3s linear;
+}
+
+.player span {
+  color: #fe2b0d;
+  width: 60px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.player #currentStart {
+  margin: 0px 0px 0px 20px;
+}
+
+.player .bar {
+  position: relative;
+  width: 30%;
+  height: 5px;
+  background: #fe2b0d;
+  margin: 0px 15px 0px 10px;
+}
+
+.player .bar .bar2 {
+  position: absolute;
+  background: green;
+  width: 0%;
+  height: 100%;
+  top: 0;
+}
+
+.player .bar .dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: blue;
+  border-radius: 50%;
+  left: 0%;
+  top: -1px;
+  transition: 1s linear;
+}
+
+.player .bar .dot::before {
+    content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid red;
+  border-radius: 50%;
+  left: -6px;
+  top: -6px;
+  box-shadow: inset 0px 0px 3px red;
+}
+
+.player .bar .input {
+  position: absolute;
+  width: 100%;
+  top: -6px;
+  left: 0;
+  cursor: pointer;
+  z-index: 99999999;
+  transition: 3s linear;
+  opacity: 0;
+}
+
+.player .vol {
+  position: relative;
+  width: 100px;
+  height: 5px;
+  margin-left: 50px;
+  background: #fe2b0d;
+  border-radius: 5%;
+}
+
+.player .vol .bi {
+  position: absolute;
+  color: #fe2b0d;
+  font-size: 25px;
+  top: -15px;
+  left: -30px;
+}
+
+.player .vol .input {
+  position: absolute;
+  width: 100%;
+  top: -6px;
+  left: 0;
+  cursor: pointer;
+  z-index: 99999999;
+  transition: 3s linear;
+  opacity: 0;
+}
+
+.player .vol .vol_bar {
+  position: absolute;
+  background: green;
+  width: 0%;
+  height: 100%;
+  top: 0;
+}
+
+.player .vol .dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: purple;
+  border-radius: 50%;
+  left: 0%;
+  top: -1px;
+  transition: 1s linear;
+}
+
+.player .vol .dot::before {
+    content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid red;
+  border-radius: 50%;
+  left: -6px;
+  top: -6px;
+  box-shadow: inset 0px 0px 3px red;
+}
 
 .footer {
   background-color: red;

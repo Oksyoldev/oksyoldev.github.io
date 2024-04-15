@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const playBtns = document.querySelectorAll('.play-btn');
 const playPauseBtn = document.querySelector('.play-pause-btn');
 const audio = document.getElementById('audio');
+ const volumeSlider = document.querySelector('.volume-slider');
 
 document.addEventListener('DOMContentLoaded', function() {
   const playBtns = document.querySelectorAll('.play-btn');
