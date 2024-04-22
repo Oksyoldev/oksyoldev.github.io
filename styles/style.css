@@ -186,7 +186,6 @@ h1:last-of-type span {
 }
 
 
-
 .image-container img {
   width: 150px;
   height: 150px;
@@ -196,26 +195,15 @@ h1:last-of-type span {
   border-radius: 5%;
 }
 
-.play-btn {
+.beats .image-info-container .image-container .bi {
   position: absolute;
+  font-size: 60px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  padding: 10px;
-  background-color: #fe2b0d;
   color: white;
-  border: none;
-  border-radius: 50%;
   cursor: pointer;
 }
-
-
-.bi-pause-fill {
-  display: none;
-}
-
 
 .info {
   font-size: 20px;
@@ -329,7 +317,7 @@ h1:last-of-type span {
 }
 
 
-.player {
+.down_player {
   justify-content: center; /* Центрируем элементы по горизонтали */
   display: flex;
   position: fixed;
@@ -344,7 +332,7 @@ h1:last-of-type span {
   box-shadow: 0 2px 12px purple;
 }
 
-.player .wave {
+.down_player .wave {
   width: 50px;
   height: 50px;
   margin-right: 10px;
@@ -353,7 +341,7 @@ h1:last-of-type span {
   align-items: flex-end;
 }
 
-.player .wave .wave1 {
+.down_player .wave .wave1 {
   width: 9px;
   height: 30px;
   margin-right: 9px;
@@ -362,26 +350,26 @@ h1:last-of-type span {
   animation: unset;
 }
 
-.player .wave .wave1:nth-child(2) {
+.down_player .wave .wave1:nth-child(2) {
   height: 39px;
  /* animation-delay: .4s;*/
 }
 
-.player .wave .wave1:nth-child(3) {
+.down_player .wave .wave1:nth-child(3) {
   height: 24px;
   /*animation-delay: .8s;*/
 }
 
 /* javascript class wave */
-.player .active2 .wave1 {
+.down_player .active2 .wave1 {
   animation: wave .5s linear infinite;
 }
 
-.player .active2 .wave1:nth-child(2) {
+.down_player .active2 .wave1:nth-child(2) {
   animation-delay: .4s;
 }
 
-.player .active2 .wave1:nth-child(3) {
+.down_player .active2 .wave1:nth-child(3) {
   animation-delay: .8s;
 }
 
@@ -397,12 +385,12 @@ h1:last-of-type span {
   }
 }
 
-.player img {
+.down_player img {
   width: 60px;
   height: 60px;
 }
 
-.player h2 {
+.down_player h2 {
   width: 130px;
   font-size: 30px;
   margin-left: -10px;
@@ -410,18 +398,18 @@ h1:last-of-type span {
   line-height: 15px;
 }
 
-.player .icon {
+.down_player .icon {
   font-size: 30px;
   color: #fe2b0d;
   margin: 0px 20px 0px 20px;
 }
 
-.player .icon .bi {
+.down_player .icon .bi {
   cursor: pointer;
   outline: none;
 }
 
-.player .icon .bi:nth-child(2){
+.down_player .icon .bi:nth-child(2){
   border: 1px solid rgb(105, 105, 170,.1);
   border-radius: 50%;
   padding: 1px 3px 0px 6px;
@@ -429,18 +417,18 @@ h1:last-of-type span {
   transition: .3s linear;
 }
 
-.player span {
+.down_player span {
   color: #fe2b0d;
   width: 60px;
   font-size: 20px;
   font-weight: 400;
 }
 
-.player #currentStart {
+.down_player #currentStart {
   margin: 0px 0px 0px 20px;
 }
 
-.player .bar {
+.down_player .bar {
   position: relative;
   width: 30%;
   height: 5px;
@@ -448,7 +436,7 @@ h1:last-of-type span {
   margin: 0px 15px 0px 10px;
 }
 
-.player .bar .bar2 {
+.down_player .bar .bar2 {
   position: absolute;
   background: green;
   width: 0%;
@@ -456,7 +444,7 @@ h1:last-of-type span {
   top: 0;
 }
 
-.player .bar .dot {
+.down_player .bar .dot {
   position: absolute;
   width: 5px;
   height: 5px;
@@ -467,7 +455,7 @@ h1:last-of-type span {
   transition: 1s linear;
 }
 
-.player .bar .dot::before {
+.down_player .bar .dot::before {
     content: '';
   position: absolute;
   width: 15px;
@@ -479,7 +467,7 @@ h1:last-of-type span {
   box-shadow: inset 0px 0px 3px red;
 }
 
-.player .bar .input {
+.down_player .bar .input {
   position: absolute;
   width: 100%;
   top: -6px;
@@ -490,7 +478,7 @@ h1:last-of-type span {
   opacity: 0;
 }
 
-.player .vol {
+.down_player .vol {
   position: relative;
   width: 100px;
   height: 5px;
@@ -499,7 +487,7 @@ h1:last-of-type span {
   border-radius: 5%;
 }
 
-.player .vol .bi {
+.down_player .vol .bi {
   position: absolute;
   color: #fe2b0d;
   font-size: 25px;
@@ -507,7 +495,7 @@ h1:last-of-type span {
   left: -30px;
 }
 
-.player .vol .input {
+.down_player .vol .input {
   position: absolute;
   width: 100%;
   top: -6px;
@@ -518,7 +506,7 @@ h1:last-of-type span {
   opacity: 0;
 }
 
-.player .vol .vol_bar {
+.down_player .vol .vol_bar {
   position: absolute;
   background: green;
   width: 0%;
@@ -526,7 +514,7 @@ h1:last-of-type span {
   top: 0;
 }
 
-.player .vol .dot {
+.down_player .vol .dot {
   position: absolute;
   width: 5px;
   height: 5px;
@@ -537,7 +525,7 @@ h1:last-of-type span {
   transition: 1s linear;
 }
 
-.player .vol .dot::before {
+.down_player .vol .dot::before {
     content: '';
   position: absolute;
   width: 15px;
