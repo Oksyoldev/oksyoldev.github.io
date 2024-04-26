@@ -115,6 +115,7 @@ let index = 0;
 let poster_player = document.getElementById('poster_player');
 let title = document.getElementById('title');
 
+
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
   element.addEventListener('click', (e) => {
     index = e.target.id;
@@ -125,6 +126,14 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
     music.src = document.getElementById(audioId).src;
     poster_player.src = `images/${index}.jpg`;
     music.play();
+    let song_title = songs.filter((ele)=>{
+        return ele.id == index;
+    })
+
+    song_title.forEach(ele =>{
+        let {songName} = ele;
+        title.innerHTML = songName;
+    })
 
     downPlayer.classList.remove('bi-play-fill');
     downPlayer.classList.add('bi-pause-fill');
@@ -187,6 +196,26 @@ document.addEventListener("DOMContentLoaded", function() {
   let vol_bar = document.querySelector('.vol_bar');
   let vol_dot = document.getElementById('vol_dot');
 
+  // Установим начальное значение громкости и стили для ползунка и значка
+  let vol_a = 50;
+  vol.value = vol_a;
+  vol_bar.style.width = vol_a + '%';
+  vol_dot.style.left = vol_a + '%';
+
+  if (vol_a == 0) {
+    vol_icon.classList.remove('bi-volume-down-fill', 'bi-volume-up-fill');
+    vol_icon.classList.add('bi-volume-mute-fill');
+  } else if (vol_a > 0 && vol_a <= 50) {
+    vol_icon.classList.remove('bi-volume-mute-fill', 'bi-volume-up-fill');
+    vol_icon.classList.add('bi-volume-down-fill');
+  } else {
+    vol_icon.classList.remove('bi-volume-mute-fill', 'bi-volume-down-fill');
+    vol_icon.classList.add('bi-volume-up-fill');
+  }
+
+  // Установим громкость для элемента music
+  music.volume = vol_a / 100;
+
   vol.addEventListener('change', () => {
     if (vol.value == 0) {
         vol_icon.classList.remove('bi-volume-down-fill');
@@ -210,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
     music.volume = vol_a/100;
   });
 });
+
 
 let back = document.getElementById('back');
 let next = document.getElementById('next');
