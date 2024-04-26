@@ -62,17 +62,17 @@ const songs = [
     {
         id:'7',
         songName: `Null`,
-        poster: "images/null.jpg"
+        poster: "images/7.jpg"
     },
     {
         id:'8',
         songName: `Null`,
-        poster: "images/null.jpg"
+        poster: "images/7.jpg"
     },
     {
         id:'9',
         songName: `Null`,
-        poster: "images/null.jpg"
+        poster: "images/7.jpg"
     }
 ];
 
@@ -180,17 +180,12 @@ music.addEventListener(`ended`, ()=>{
     wave.classList.remove('active2')
 })
 
-let vol_icon = document.getElementById('vol_icon');
-let vol = document.getElementById('vol');
-let vol_dot = document.getElementById('vol_dot');
-let vol_bar = document.getElementsByClassName('vol_bar')[0];
 
 document.addEventListener("DOMContentLoaded", function() {
   let vol = document.getElementById('vol');
   let vol_icon = document.getElementById('vol_icon');
   let vol_bar = document.querySelector('.vol_bar');
   let vol_dot = document.getElementById('vol_dot');
-  let music = document.getElementById('music');
 
   vol.addEventListener('change', () => {
     if (vol.value == 0) {
@@ -210,21 +205,36 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     let vol_a = vol.value;
-    vol_bar.style.width = `${vol_a}%`;
-    vol_dot.style.left = `${vol_a}%`;
+    vol_bar.style.width = vol_a + '%';
+    vol_dot.style.left = vol_a + '%';
     music.volume = vol_a/100;
   });
 });
 
 let back = document.getElementById('back');
-let next = document.getElementById('back');
+let next = document.getElementById('next');
 
 back.addEventListener('click', ()=>{
     index -= 1;
     if (index < 1) {
         index = Array.from(document.getElementsByClassName('image-container')).length;
     }
-    music.src = `audio/${index}.waw`;
+    music.src = `beats/${index}.wav`;
+    poster_player.src = `images/${index}.jpg`;
+    music.play();
+
+    makeAllPlays();
+    document.getElementById(`${index}`).classList.remove('bi-play-fill');
+    document.getElementById(`${index}`).classList.add('bi-pause-fill');
+})
+
+next.addEventListener('click', ()=>{
+    index -= 0;
+    index += 1;
+    if (index > Array.from(document.getElementsByClassName('image-container')).length) {
+        index = 1;
+    }
+    music.src = `beats/${index}.wav`;
     poster_player.src = `images/${index}.jpg`;
     music.play();
 
