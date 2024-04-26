@@ -180,4 +180,59 @@ music.addEventListener(`ended`, ()=>{
     wave.classList.remove('active2')
 })
 
+let vol_icon = document.getElementById('vol_icon');
+let vol = document.getElementById('vol');
+let vol_dot = document.getElementById('vol_dot');
+let vol_bar = document.getElementsByClassName('vol_bar')[0];
+
+document.addEventListener("DOMContentLoaded", function() {
+  let vol = document.getElementById('vol');
+  let vol_icon = document.getElementById('vol_icon');
+  let vol_bar = document.querySelector('.vol_bar');
+  let vol_dot = document.getElementById('vol_dot');
+  let music = document.getElementById('music');
+
+  vol.addEventListener('change', () => {
+    if (vol.value == 0) {
+        vol_icon.classList.remove('bi-volume-down-fill');
+        vol_icon.classList.add('bi-volume-mute-fill');
+        vol_icon.classList.remove('bi-volume-up-fill');
+    }
+    if (vol.value > 0) {
+        vol_icon.classList.add('bi-volume-down-fill');
+        vol_icon.classList.remove('bi-volume-mute-fill');
+        vol_icon.classList.remove('bi-volume-up-fill');
+    }
+    if (vol.value > 50) {
+        vol_icon.classList.remove('bi-volume-down-fill');
+        vol_icon.classList.remove('bi-volume-mute-fill');
+        vol_icon.classList.add('bi-volume-up-fill');
+    }
+
+    let vol_a = vol.value;
+    vol_bar.style.width = `${vol_a}%`;
+    vol_dot.style.left = `${vol_a}%`;
+    music.volume = vol_a/100;
+  });
+});
+
+let back = document.getElementById('back');
+let next = document.getElementById('back');
+
+back.addEventListener('click', ()=>{
+    index -= 1;
+    if (index < 1) {
+        index = Array.from(document.getElementsByClassName('image-container')).length;
+    }
+    music.src = `audio/${index}.waw`;
+    poster_player.src = `images/${index}.jpg`;
+    music.play();
+
+    makeAllPlays();
+    document.getElementById(`${index}`).classList.remove('bi-play-fill');
+    document.getElementById(`${index}`).classList.add('bi-pause-fill');
+})
+
+
+
 
