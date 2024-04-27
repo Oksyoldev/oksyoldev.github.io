@@ -120,6 +120,7 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
   element.addEventListener('click', (e) => {
     index = e.target.id;
     makeAllPlays();
+    document.querySelector('.down_player').classList.remove('hidden');
     e.target.classList.remove('bi-play-circle');
     e.target.classList.add('bi-pause-circle');
     let audioId = "audio" + index;

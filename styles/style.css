@@ -279,6 +279,10 @@ h1:last-of-type span {
   color: white;
 }
 
+.image-item .price-item {
+  color: #f79300;
+}
+
 .text-block {
   text-align: center; /* Центрирование текста */
   margin-top: 10px; /* Отступ сверху */
@@ -331,6 +335,11 @@ h1:last-of-type span {
   z-index: 999999;
   box-shadow: 0 2px 12px purple;
 }
+
+.hidden {
+  display: none;
+}
+
 
 .down_player .wave {
   width: 50px;
@@ -541,7 +550,29 @@ h1:last-of-type span {
 
 .footer {
   background-color: red;
-  padding: 1em;
+  padding: 1.2em;
   text-align: center;
+  max-height: 25px;
 }
 
+.copy-text {
+  color: white;
+  text-decoration:none;
+}
+
+.social {
+  width: 15%;
+  height: 40px;
+  position: relative;
+  left: 1540px;
+  top: -25px;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.bi {
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
