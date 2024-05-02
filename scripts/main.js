@@ -83,6 +83,8 @@ Array.from(document.getElementsByClassName('image-container')).forEach((element,
 
 
 
+
+
 let downPlayer = document.getElementById('downPlayer');
 let music = new Audio();
 let wave = document.getElementsByClassName('wave')[0];
