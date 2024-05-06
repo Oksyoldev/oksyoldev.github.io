@@ -336,9 +336,9 @@ h1:last-of-type span {
   box-shadow: 0 2px 12px purple;
 }
 
-.hidden {
-/*  display: none;*/
-}
+/*.hidden {
+    display: none;
+}*/
 
 
 .down_player .wave {
@@ -355,7 +355,7 @@ h1:last-of-type span {
   height: 30px;
   margin-right: 9px;
   border-radius: 30px 30px 0px 0px;
-  background: blue;
+  background: purple;
   animation: unset;
 }
 
@@ -399,30 +399,28 @@ h1:last-of-type span {
   height: 60px;
 }
 
-.down_player h2 {
-  width: 130px;
+.down_player h2 { 
   font-size: 30px;
-  margin-left: -10px;
+  margin-left: 5px;
   color: purple;
-  line-height: 15px;
 }
 
 .down_player .icon {
   font-size: 30px;
   color: #fe2b0d;
-  margin: 0px 20px 0px 20px;
+  margin: 3px 20px 0px 35px;
 }
 
 .down_player .icon .bi {
   cursor: pointer;
   outline: none;
+  color: #fe2b0d;
 }
 
 .down_player .icon .bi:nth-child(2){
-  border: 1px solid rgb(105, 105, 170,.1);
-  border-radius: 50%;
   padding: 1px 3px 0px 6px;
   transition: .3s linear;
+  color: #fe2b0d;
 }
 
 .down_player span {
@@ -446,7 +444,7 @@ h1:last-of-type span {
 
 .down_player .bar .bar2 {
   position: absolute;
-  background: green;
+  background: purple;
   width: 0%;
   height: 100%;
   top: 0;
@@ -457,7 +455,7 @@ h1:last-of-type span {
   position: absolute;
   width: 5px;
   height: 5px;
-  background: blue;
+  background: purple;
   border-radius: 50%;
   left: 0%;
   top: -1px;
@@ -467,13 +465,13 @@ h1:last-of-type span {
 .down_player .bar .dot::before {
     content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
-  border: 1px solid red;
+  width: 10px;
+  height: 10px;
+  border: 1px solid purple;
   border-radius: 50%;
   left: -6px;
-  top: -6px;
-  box-shadow: inset 0px 0px 3px red;
+  top: -2.3px;
+  box-shadow: inset 0px 110px 3px purple;
 }
 
 .down_player .bar .input {
@@ -500,7 +498,7 @@ h1:last-of-type span {
   position: absolute;
   color: #fe2b0d;
   font-size: 25px;
-  top: -15px;
+  top: -13px;
   left: -30px;
 }
 
@@ -517,7 +515,7 @@ h1:last-of-type span {
 
 .down_player .vol .vol_bar {
   position: absolute;
-  background: green;
+  background: purple;
   width: 0%;
   height: 100%;
   top: 0;
@@ -538,13 +536,13 @@ h1:last-of-type span {
 .down_player .vol .dot::before {
     content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
-  border: 1px solid red;
+  width: 10px;
+  height: 10px;
+  border: 1px solid purple;
   border-radius: 50%;
   left: -6px;
-  top: -6px;
-  box-shadow: inset 0px 0px 3px red;
+  top: -2.3px;
+  box-shadow: inset 0px 110px 3px purple;
 }
 
 .footer {

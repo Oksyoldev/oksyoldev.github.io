@@ -115,7 +115,7 @@ const makeAllPlays = () =>{
 
 let index = 0;
 let poster_player = document.getElementById('poster_player');
-let title = document.getElementById('title');
+let secondTitle = document.getElementById('title_down_player');
 
 
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element) => {
@@ -123,32 +123,52 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element) =>
     index = e.target.id;
     makeAllPlays();
     document.querySelector('.down_player').classList.remove('hidden');
-    e.target.classList.remove('bi-play-circle');
-    e.target.classList.add('bi-pause-circle');
-    let audioId = "audio" + index;
-    music.src = document.getElementById(audioId).src;
-    poster_player.src = `images/${index}.jpg`;
-    music.play();
-    let song_title = songs.filter((ele)=>{
-        return ele.id == index;
-    })
+    
+    // Проверяем текущее состояние воспроизведения
+    if (music.paused || music.src !== document.getElementById("audio" + index).src) {
+      // Если на паузе или выбрана новая песня 
 
-    song_title.forEach(ele =>{
-        let {songName} = ele;
-        title.innerHTML = songName;
-    })
+      // Устанавливаем классы кнопкам плей и паузы
+      e.target.classList.remove('bi-play-circle');
+      e.target.classList.add('bi-pause-circle');
 
-    downPlayer.classList.remove('bi-play-fill');
-    downPlayer.classList.add('bi-pause-fill');
-    wave.classList.add('active2')
-    music.addEventListener(`ended`,() => {
+      // Устанавливаем источник музыки и постер
+      let audioId = "audio" + index;
+      music.src = document.getElementById(audioId).src;
+      poster_player.src = `images/${index}.jpg`;
+
+      // Воспроизводим музыку
+      music.play();
+
+      // Устанавливаем название песни
+      let song_title = songs.filter((ele) => ele.id == index);
+      secondTitle.innerHTML = song_title[0].songName;
+
+      // Устанавливаем классы для кнопки внизу
+      downPlayer.classList.remove('bi-play-fill');
+      downPlayer.classList.add('bi-pause-fill');
+      wave.classList.add('active2');
+
+      // Добавляем обработчик завершения воспроизведения
+      music.addEventListener('ended', () => {
         downPlayer.classList.remove('bi-pause-fill');
         downPlayer.classList.add('bi-play-fill');
-        wave.classList.remove('active2')
+        wave.classList.remove('active2');
+      });
 
-    })
+    } else {
+      // Если уже играет текущая песня, ставим на паузу
+
+      music.pause();
+      e.target.classList.remove('bi-pause-circle');
+      e.target.classList.add('bi-play-circle');
+      downPlayer.classList.remove('bi-pause-fill');
+      downPlayer.classList.add('bi-play-fill');
+      wave.classList.remove('active2');
+    }
   });
 });
+
 
 let currentStart = document.getElementById('currentStart');
 let currentEnd = document.getElementById('currentEnd');
@@ -241,8 +261,14 @@ document.addEventListener("DOMContentLoaded", function() {
     vol_dot.style.left = vol_a + '%';
     music.volume = vol_a/100;
   });
-});
 
+  vol_icon.addEventListener('click', () => {
+    if (vol.value != 0) {
+      vol.value = 0; 
+      vol.dispatchEvent(new Event('change'));
+    }
+  });
+});
 
 let back = document.getElementById('back');
 let next = document.getElementById('next');
@@ -252,6 +278,18 @@ back.addEventListener('click', ()=>{
     if (index < 1) {
         index = Array.from(document.getElementsByClassName('image-container')).length;
     }
+
+     // Обновляем название трека
+    let song_title = songs.filter((ele)=>{
+        return ele.id == index;
+    });
+
+    song_title.forEach(ele => {
+        let {songName} = ele;
+        secondTitle.innerHTML = songName;
+    });
+
+
     music.src = `beats/${index}.wav`;
     poster_player.src = `images/${index}.jpg`;
     music.play();
@@ -267,6 +305,17 @@ next.addEventListener('click', ()=>{
     if (index > Array.from(document.getElementsByClassName('image-container')).length) {
         index = 1;
     }
+
+     // Обновляем название трека
+    let song_title = songs.filter((ele)=>{
+        return ele.id == index;
+    });
+
+    song_title.forEach(ele => {
+        let {songName} = ele;
+        secondTitle.innerHTML = songName;
+    });
+
     music.src = `beats/${index}.wav`;
     poster_player.src = `images/${index}.jpg`;
     music.play();
