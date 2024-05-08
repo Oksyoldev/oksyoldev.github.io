@@ -28,6 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('.modal');
+    const buyButtons = document.querySelectorAll('.buy-btn');
+
+    buyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+
+
 const songs = [
     {
         id:'1',
