@@ -45,7 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
+$(document).ready(function(){       
+    var mainOffset = $('.main').offset().top;
+    var priceOffset = $('.price').offset().top;
+    
+    $(document).scroll(function() { 
+        var scroll_pos = $(this).scrollTop();
+        
+        if(scroll_pos >= priceOffset) {
+            $('.slideMenuNav').css('color', 'white');
+        } else if(scroll_pos >= mainOffset) {
+            $('.slideMenuNav').css('color', 'black');
+        } else {
+            $('.slideMenuNav').css('color', 'white');
+        }
+    });
+});
 
 
 const songs = [
