@@ -619,14 +619,15 @@ h1:last-of-type span {
 }
 
 .social {
-  width: 12%;
-  height: 30px;
-  position: relative;
-  left: 1540px;
-  top: -25px;
+  width: 100%;
+  max-width: 200px;
   font-size: 20px;
-  padding: 5px 10px;
+  position: relative;
+  top: -20px;
+  left: 78%;
+  transform: translate(78%);
 }
+
 
 .bi {
   margin-right: 10px;
@@ -635,13 +636,14 @@ h1:last-of-type span {
   color: black;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 1170px) {
   .social {
-    flex-wrap: wrap;
-  }
-  
-  .bi {
-    font-size: 1.5em; /* Можно увеличить размер иконок */
-    margin: 5px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 }
+
+
