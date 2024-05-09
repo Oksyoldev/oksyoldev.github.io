@@ -29,10 +29,7 @@ h1 {
   color: #fe2b0d;
 }
 
-h1:first-of-type {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
-                       it's okaish for now */
+h1:first-of-type {
   animation: showup 7s infinite;
 }
 
@@ -150,22 +147,6 @@ h1:last-of-type span {
 
 .slidemenu .slide-toggle:checked + label{
   opacity: 1;
-}
-
-
-
-/* Медиа-запрос для планшетов с шириной экрана от 768px до 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .header {
-    padding: 3em; /* Оптимальное значение паддинга для планшетов */
-  }
-}
-
-/* Медиа-запрос для устройств с шириной экрана меньше 768px (например, мобильные телефоны) */
-@media screen and (max-width: 768px) {
-  .header {
-    padding: 1em; /* Оптимальное значение паддинга для мобильных устройств */
-  }
 }
 
 
@@ -636,13 +617,98 @@ h1:last-of-type span {
   color: black;
 }
 
+
 @media screen and (max-width: 1170px) {
+  h1 {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    width: 350px; /* Увеличьте значение ширины блока на ваше усмотрение */
+    max-width: 730px;
+    height: 40px;
+    font-size: 35px;
+    color: #fe2b0d;
+  }
+  .header {
+    padding: 10em;
+    background-image: url(https://i.imgur.com/iuMxwZil.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  h1:last-of-type span {
+    margin-left:-155px;
+    animation: slidein 7s infinite;
+  }
+
+  @keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+  }
+
+  @keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+  }
+
+  @keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:1000px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:12000px;}
+  }
   .social {
     position: relative;
-    top: 0;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1em;
+    height: 30vh
+  }
+  .beats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Расстояние между элементами */
+  }
+  .info {
+    font-size: 18px;
+    margin-top: -20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .price {
+    background-color: black;
+    padding: 10em;
+    height: 75vh;
+  }
+  .image-item .first {
+    margin-left: -300%;
+  }
+  .image-item .two {
+    margin-left: -350%;
+  }
+  .image-item .three {
+    margin-left: -300%;
+  }
+  .footer {
+    background-color: red;
+    padding: 1.2em;
+    text-align: center;
+    max-height: 45px;
   }
 }
 
