@@ -347,25 +347,7 @@ h1:last-of-type span {
 .text-block li {
   margin: 5px 0; /* Отступы между пунктами списка */
   color: white;
-}
-.text-block {
-  text-align: center; /* Центрирование текста */
-  margin-top: 10px; /* Отступ сверху */
-}
-
-.text-block p {
-  font-size: 16px; /* Размер текста */
-}
-
-.text-block ul {
-  list-style-type: none; /* Убираем маркеры списка */
-  padding: 0; /* Убираем отступ у списка */
-}
-
-.text-block li {
-  margin: 5px 0; /* Отступы между пунктами списка */
-}
-
+} 
 
 .down_player {
   justify-content: center; /* Центрируем элементы по горизонтали */
@@ -473,7 +455,7 @@ h1:last-of-type span {
 }
 
 .down_player #currentStart {
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 10px;
 }
 
 .down_player .bar {
@@ -630,7 +612,7 @@ h1:last-of-type span {
     color: #fe2b0d;
   }
   .header {
-    padding: 10em;
+    padding: 30em;
     background-image: url(https://i.imgur.com/iuMxwZil.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -693,7 +675,7 @@ h1:last-of-type span {
   .price {
     background-color: black;
     padding: 10em;
-    height: 75vh;
+    height: 130vh;
   }
   .image-item .first {
     margin-left: -300%;
@@ -704,15 +686,33 @@ h1:last-of-type span {
   .image-item .three {
     margin-left: -300%;
   }
+  .image-item img {
+    width: 450px;
+    height: 450px;
+  }
+  .text-block p {
+    font-size: 26px; /* Размер текста */
+    color: white;
+  }
+  .image-item p {
+    margin-top: 5px;
+    color: white;
+    font-size: 30px;
+  }
+  .text-block li {
+    margin: 5px 0; /* Отступы между пунктами списка */
+    color: white;
+    font-size: 30px;
+  } 
   .down_player {
     justify-content: center; /* Центрируем элементы по горизонтали */
     display: flex;
     position: sticky;
     bottom: 0;
-    height: 110px;
+    height: 130px;
     align-items: center;
     z-index: 999999;
-    box-shadow: 0 2px 12px purple;
+    box-shadow: 0 4px 22px purple;
   }
   .down_player .wave {
     width: 50px;
@@ -724,8 +724,8 @@ h1:last-of-type span {
     display: none;
   }
   .down_player img {
-    width: 80px;
-    height: 80px;
+    width: 95px;
+    height: 95px;
   }
   .down_player h2 { 
     font-size: 40px;
@@ -733,15 +733,25 @@ h1:last-of-type span {
     color: purple;
   }
   .down_player .icon {
-    font-size: 40px;
+    font-size: 50px;
     color: #fe2b0d;
-    margin: 3px 20px 0px 35px;
+    margin: 3px 15px 0px 35px;
   }
   .down_player span {
     color: #fe2b0d;
-    width: 40px;
+    width: 90px;
     font-size: 25px;
     font-weight: 310;
+  }
+  .down_player #currentStart {
+    margin: 0px 0px 0px 0px;
+  }
+  .down_player .bar {
+    position: relative;
+    width: 20%;
+    height: 10px;
+    background: #fe2b0d;
+    margin: 0px 15px 0px 10px;
   }
   .down_player .vol {
     position: relative;
