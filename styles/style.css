@@ -601,6 +601,14 @@ h1:last-of-type span {
 
 
 @media screen and (max-width: 1170px) {
+  .logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+    height: 150px;
+    z-index: 999;
+  }
   h1 {
     display:inline-block;
     overflow:hidden;
@@ -612,7 +620,8 @@ h1:last-of-type span {
     color: #fe2b0d;
   }
   .header {
-    padding: 30em;
+    padding: 1em;
+    height: 75vh;
     background-image: url(https://i.imgur.com/iuMxwZil.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -644,6 +653,43 @@ h1:last-of-type span {
     80% {opacity:1;}
     100% {opacity:0;width:12000px;}
   }
+  .slidemenu {
+    font-family: arial, sans-serif;
+    max-width: 440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 40px;
+    right: 100px;
+    z-index: 999;
+  }
+  .slidemenu label {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    color: #333;
+    opacity: 0.5;
+    padding: 10px;
+  }
+  .slidemenu label .icon {
+    font-size: 60px;
+    border: solid 3px #333;
+    text-align: center;
+    width: 105px;
+    height: 65px;
+    display: block;
+    margin: 0 auto;
+    line-height: 50px;
+    border-radius: 50px;
+  }
+  .slidemenu label a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+  }
   .social {
     position: relative;
     top: 10px;
@@ -657,7 +703,7 @@ h1:last-of-type span {
     align-items: center;
     background-color: white;
     padding: 1em;
-    height: 30vh
+    height: 45vh;
   }
   .beats {
     display: grid;
@@ -766,9 +812,22 @@ h1:last-of-type span {
   }
   .footer {
     background-color: red;
-    padding: 1.2em;
+    padding: 3.5em;
     text-align: center;
-    max-height: 45px;
+    font-size: 30px;
+  }
+
+  .copy-text {
+    color: white;
+    text-decoration:none;
+  }
+
+  .social {
+    width: 100%;
+    max-width: 500px;
+    font-size: 50px;
+    position: relative;
+    top: -150px;
   }
 }
 
