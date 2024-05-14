@@ -76,7 +76,7 @@ h1:last-of-type span {
 
 
 .header {
-  padding: 18em;
+  padding: 25em;
   background-image: url(https://i.imgur.com/iuMxwZil.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -675,7 +675,7 @@ h1:last-of-type span {
   .price {
     background-color: black;
     padding: 10em;
-    height: 130vh;
+    height: 145vh;
   }
   .image-item .first {
     margin-left: -300%;
@@ -726,20 +726,22 @@ h1:last-of-type span {
   .down_player img {
     width: 95px;
     height: 95px;
+    display: none;
   }
   .down_player h2 { 
     font-size: 40px;
     margin-left: 5px;
     color: purple;
+    display: none;
   }
   .down_player .icon {
     font-size: 50px;
     color: #fe2b0d;
-    margin: 3px 15px 0px 35px;
+    margin: 3px 15px 0px 0px;
   }
   .down_player span {
     color: #fe2b0d;
-    width: 90px;
+    width: 75px;
     font-size: 25px;
     font-weight: 310;
   }
@@ -748,7 +750,7 @@ h1:last-of-type span {
   }
   .down_player .bar {
     position: relative;
-    width: 20%;
+    width: 55%;
     height: 10px;
     background: #fe2b0d;
     margin: 0px 15px 0px 10px;
