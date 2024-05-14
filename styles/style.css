@@ -662,7 +662,7 @@ h1:last-of-type span {
   .beats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px; /* Расстояние между элементами */
+    gap: 50px; /* Расстояние между элементами */
   }
   .info {
     font-size: 18px;
