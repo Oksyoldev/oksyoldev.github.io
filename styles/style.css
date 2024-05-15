@@ -22,9 +22,10 @@ h1 {
   display:inline-block;
   overflow:hidden;
   white-space:nowrap;
+  position: relative;
+  top: 50px;
   width: 550px; /* Увеличьте значение ширины блока на ваше усмотрение */
   max-width: 730px;
-  height: 95px;
   font-size: 65px;
   color: #fe2b0d;
 }
@@ -625,7 +626,7 @@ h1:last-of-type span {
     width: 650px;
     position: relative;
     top: 650px;
-    max-width: 730px;
+    max-width: 740px;
     height: 95px;
     font-size: 75px;
     color: #fe2b0d;
@@ -709,7 +710,7 @@ h1:last-of-type span {
     align-items: center;
     background-color: white;
     padding: 1em;
-    height: 45vh;
+    height: 48vh;
   }
   .beats {
     display: grid;
