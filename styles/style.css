@@ -76,7 +76,8 @@ h1:last-of-type span {
 
 
 .header {
-  padding: 25em;
+  padding: 18em;
+  height: 40vh;
   background-image: url(https://i.imgur.com/iuMxwZil.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -609,16 +610,6 @@ h1:last-of-type span {
     height: 150px;
     z-index: 999;
   }
-  h1 {
-    display:inline-block;
-    overflow:hidden;
-    white-space:nowrap;
-    width: 350px; /* Увеличьте значение ширины блока на ваше усмотрение */
-    max-width: 730px;
-    height: 40px;
-    font-size: 35px;
-    color: #fe2b0d;
-  }
   .header {
     padding: 1em;
     height: 90vh;
@@ -627,8 +618,23 @@ h1:last-of-type span {
     background-repeat: no-repeat;
     background-position: center;
   }
+  h1 {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    width: 650px;
+    position: relative;
+    top: 650px;
+    max-width: 730px;
+    height: 95px;
+    font-size: 75px;
+    color: #fe2b0d;
+  }
+  h1 span {
+    font-size: 55px;
+  }
   h1:last-of-type span {
-    margin-left:-155px;
+    margin-left:-355px;
     animation: slidein 7s infinite;
   }
 
