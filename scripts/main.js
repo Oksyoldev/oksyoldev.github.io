@@ -62,25 +62,38 @@ document.addEventListener('DOMContentLoaded', function() {
 //     });
 // });
 
+var ticking = false;
+
 window.addEventListener('scroll', function() {
-  var mainElement = document.querySelector('.main');
-  var priceElement = document.querySelector('.price');
-  var menuItems = document.querySelectorAll('.slidemenu label a');
-  
-  if (mainElement && mainElement.getBoundingClientRect().top < 88) {
-    menuItems.forEach(function(item) {
-      item.style.color = 'black';
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      var mainElement = document.querySelector('.main');
+      var priceElement = document.querySelector('.price');
+      var menuItems = document.querySelectorAll('.slidemenu label a');
+      
+      var mainTop = mainElement ? mainElement.getBoundingClientRect().top : null;
+      var priceTop = priceElement ? priceElement.getBoundingClientRect().top : null;
+      
+      var currentColor = 'white'; // По умолчанию меняем цвет на белый
+
+      if ((mainTop <= 80 && mainTop >= -900) || (priceTop <= 0 && priceTop >= 0)) {
+        currentColor = 'black';
+      }
+      
+      menuItems.forEach(function(item) {
+        item.style.color = currentColor;
+      });
+      
+      ticking = false;
     });
-  } else if (priceElement && priceElement.getBoundingClientRect().top < 88) {
-    menuItems.forEach(function(item) {
-      item.style.color = 'white';
-    });
-  } else {
-    menuItems.forEach(function(item) {
-      item.style.color = 'white';
-    });
+    
+    ticking = true;
   }
 });
+
+
+
+
 
 
 const songs = [
