@@ -45,21 +45,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-$(document).ready(function(){       
-    var mainOffset = $('.main').offset().top;
-    var priceOffset = $('.price').offset().top;
+// $(document).ready(function(){       
+//     var mainOffset = $('.main').offset().top;
+//     var priceOffset = $('.price').offset().top;
     
-    $(document).scroll(function() { 
-        var scroll_pos = $(this).scrollTop();
+//     $(document).scroll(function() { 
+//         var scroll_pos = $(this).scrollTop();
         
-        if(scroll_pos >= priceOffset) {
-            $('.slideMenuNav').css('color', 'white');
-        } else if(scroll_pos >= mainOffset) {
-            $('.slideMenuNav').css('color', 'black');
-        } else {
-            $('.slideMenuNav').css('color', 'white');
-        }
+//         if(scroll_pos >= priceOffset) {
+//             $('.slideMenuNav').css('color', 'white');
+//         } else if(scroll_pos >= mainOffset) {
+//             $('.slideMenuNav').css('color', 'black');
+//         } else {
+//             $('.slideMenuNav').css('color', 'white');
+//         }
+//     });
+// });
+
+window.addEventListener('scroll', function() {
+  var mainElement = document.querySelector('.main');
+  var priceElement = document.querySelector('.price');
+  var menuItems = document.querySelectorAll('.slidemenu label a');
+  
+  if (mainElement && mainElement.getBoundingClientRect().top < 88) {
+    menuItems.forEach(function(item) {
+      item.style.color = 'black';
     });
+  } else if (priceElement && priceElement.getBoundingClientRect().top < 88) {
+    menuItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
+  } else {
+    menuItems.forEach(function(item) {
+      item.style.color = 'white';
+    });
+  }
 });
 
 
