@@ -808,6 +808,27 @@ h1:last-of-type span {
     background: #fe2b0d;
     margin: 0px 15px 0px 10px;
   }
+  .down_player .bar .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: purple;
+    border-radius: 50%;
+    left: 0%;
+    top: -4px;
+    transition: 1s linear;
+  }
+
+  .down_player .bar .dot::before {
+      content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid purple;
+    border-radius: 50%;
+    left: -6px;
+    box-shadow: inset 0px 110px 3px purple;
+  }
   .down_player .vol {
     position: relative;
     width: 100px;
