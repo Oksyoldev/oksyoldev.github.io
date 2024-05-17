@@ -341,13 +341,13 @@ document.addEventListener("DOMContentLoaded", function() {
 let back = document.getElementById('back');
 let next = document.getElementById('next');
 
-back.addEventListener('click', ()=>{
+back.addEventListener('click', ()=> {
     index -= 1;
     if (index < 1) {
         index = Array.from(document.getElementsByClassName('image-container')).length;
     }
 
-     // Обновляем название трека
+    // Обновляем название трека
     let song_title = songs.filter((ele)=>{
         return ele.id == index;
     });
@@ -357,24 +357,33 @@ back.addEventListener('click', ()=>{
         secondTitle.innerHTML = songName;
     });
 
-
     music.src = `beats/${index}.wav`;
     poster_player.src = `images/${index}.jpg`;
     music.play();
 
     makeAllPlays();
-    document.getElementById(`${index}`).classList.remove('bi-play-fill');
-    document.getElementById(`${index}`).classList.add('bi-pause-fill');
-})
 
-next.addEventListener('click', ()=>{
+    // Изменяем кнопку на верхнем плеере в зависимости от состояния воспроизведения на нижнем плеере
+    let playButton = document.getElementById(`${index}`);
+    let isPlaying = !music.paused && !music.ended;
+    if (isPlaying) {
+        playButton.classList.remove('bi-play-circle');
+        playButton.classList.add('bi-pause-fill');
+    } else {
+        playButton.classList.remove('bi-pause-fill');
+        playButton.classList.add('bi-play-circle');
+    }
+});
+
+
+next.addEventListener('click', ()=> {
     index -= 0;
     index += 1;
     if (index > Array.from(document.getElementsByClassName('image-container')).length) {
         index = 1;
     }
 
-     // Обновляем название трека
+    // Обновляем название трека
     let song_title = songs.filter((ele)=>{
         return ele.id == index;
     });
@@ -389,9 +398,18 @@ next.addEventListener('click', ()=>{
     music.play();
 
     makeAllPlays();
-    document.getElementById(`${index}`).classList.remove('bi-play-fill');
-    document.getElementById(`${index}`).classList.add('bi-pause-fill');
-})
+
+    // Изменяем кнопку на верхнем плеере в зависимости от состояния воспроизведения на нижнем плеере
+    let playButton = document.getElementById(`${index}`);
+    let isPlaying = !music.paused && !music.ended;
+    if (isPlaying) {
+        playButton.classList.remove('bi-play-circle');
+        playButton.classList.add('bi-pause-fill');
+    } else {
+        playButton.classList.remove('bi-pause-fill');
+        playButton.classList.add('bi-play-circle');
+    }
+});
 
 
 
