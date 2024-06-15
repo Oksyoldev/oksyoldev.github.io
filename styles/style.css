@@ -362,10 +362,10 @@ h1:last-of-type span {
   box-shadow: 0 2px 12px purple;
 }
 
-/*.hidden {
+.hidden {
     display: none;
 }
-*/
+
 
 .down_player .wave {
   width: 50px;
