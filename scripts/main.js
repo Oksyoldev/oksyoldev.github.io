@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+// Плавна прокрутка до вказаного елементу на сторінці при кліці на посилання з якорем.
+
+document.addEventListener("DOMContentLoaded", function() { 
   const links = document.querySelectorAll('a[href^="#"]');
   
   links.forEach(link => {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Модальне вікно 
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.querySelector('.modal');
     const buyButtons = document.querySelectorAll('.buy-btn');
@@ -45,23 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// $(document).ready(function(){       
-//     var mainOffset = $('.main').offset().top;
-//     var priceOffset = $('.price').offset().top;
-    
-//     $(document).scroll(function() { 
-//         var scroll_pos = $(this).scrollTop();
-        
-//         if(scroll_pos >= priceOffset) {
-//             $('.slideMenuNav').css('color', 'white');
-//         } else if(scroll_pos >= mainOffset) {
-//             $('.slideMenuNav').css('color', 'black');
-//         } else {
-//             $('.slideMenuNav').css('color', 'white');
-//         }
-//     });
-// });
-
+// прокрутка сторінки та зміна кольору тексту елементів меню в залежності від положення відповідних елементів на сторінці.
 var ticking = false;
 
 window.addEventListener('scroll', function() {
@@ -74,7 +61,7 @@ window.addEventListener('scroll', function() {
       var mainTop = mainElement ? mainElement.getBoundingClientRect().top : null;
       var priceTop = priceElement ? priceElement.getBoundingClientRect().top : null;
       
-      var currentColor = 'white'; // По умолчанию меняем цвет на белый
+      var currentColor = 'white'; 
 
       if ((mainTop <= 80 && mainTop >= -900) || (priceTop <= 0 && priceTop >= 0)) {
         currentColor = 'black';
@@ -129,7 +116,7 @@ const songs = [
     },
     {
         id:'7',
-        songName: `Null`,
+        songName: `Bounce`,
         poster: "images/7.jpg"
     },
     {
