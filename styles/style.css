@@ -602,6 +602,7 @@ h1:last-of-type span {
 }
 
 
+/* МОБИЛЬНАЯ ВЕРСИЯ */
 @media screen and (max-width: 1170px) {
   .logo {
     position: fixed;
@@ -660,6 +661,7 @@ h1:last-of-type span {
     80% {opacity:1;}
     100% {opacity:0;width:12000px;}
   }
+  
   .slidemenu {
     font-family: arial, sans-serif;
     max-width: 440px;
@@ -697,6 +699,7 @@ h1:last-of-type span {
     color: white;
     font-size: 25px;
   }
+  
   .social {
     position: relative;
     top: 10px;
@@ -704,145 +707,202 @@ h1:last-of-type span {
     transform: translateX(-50%);
     text-align: center;
   }
+  
   .main {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     padding: 1em;
-    height: 48vh;
+    min-height: 100vh;
+    height: auto;
   }
+  
+  /* БИТЫ - МОБИЛЬНАЯ ВЕРСИЯ (1 В СТРОКУ, но с оригинальным расположением) */
   .beats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px; /* Расстояние между элементами */
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
+  
+  .image-info-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .image-container img {
+    width: 180px;
+    height: 180px;
+  }
+  
   .info {
-    font-size: 16px;
-    margin-top: -20px;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
   }
+  
+  .info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .info p {
+    font-size: 20px;
+    margin-top: 5px;
+    align-self: flex-start;
+  }
+  
+  .buy-btn {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin-top: 20px;
+  }
+  
   .price {
     background-color: black;
-    padding: 10em;
-    height: 145vh;
+    padding: 5em 2em;
+    min-height: 100vh;
+    height: auto;
   }
-  .image-item .first {
-    margin-left: -300%;
+  
+  .image-block {
+    margin-left: 0;
   }
-  .image-item .two {
-    margin-left: -350%;
+  
+  .image-item {
+    margin: 30px auto;
+    max-width: 100%;
   }
+  
+  .image-item .first,
+  .image-item .two,
   .image-item .three {
-    margin-left: -300%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
   }
+  
   .image-item img {
-    width: 450px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
   }
+  
   .text-block p {
-    font-size: 26px; /* Размер текста */
+    font-size: 20px;
     color: white;
   }
+  
   .image-item p {
     margin-top: 5px;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
   }
+  
   .text-block li {
-    margin: 5px 0; /* Отступы между пунктами списка */
+    margin: 5px 0;
     color: white;
-    font-size: 30px;
-  } 
+    font-size: 18px;
+  }
+  
+  /* Остальной код для плеера и футера остается как был */
   .down_player {
-    justify-content: center; /* Центрируем элементы по горизонтали */
+    justify-content: center;
     display: flex;
     position: sticky;
     bottom: 0;
-    height: 130px;
+    height: 100px;
     align-items: center;
     z-index: 999999;
     box-shadow: 0 4px 22px purple;
   }
+  
   .down_player .wave {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    padding-bottom: 5px;
-    display: flex;
-    align-items: flex-end;
     display: none;
   }
+  
   .down_player img {
-    width: 95px;
-    height: 95px;
-    display: none;
+    width: 70px;
+    height: 70px;
+    display: block;
   }
+  
   .down_player h2 { 
-    font-size: 40px;
+    font-size: 20px;
     margin-left: 5px;
     color: purple;
-    display: none;
+    display: block;
   }
+  
   .down_player .icon {
-    font-size: 50px;
+    font-size: 35px;
     color: #fe2b0d;
-    margin: 3px 15px 0px 0px;
+    margin: 3px 10px 0px 10px;
   }
+  
   .down_player span {
     color: #fe2b0d;
-    width: 75px;
-    font-size: 25px;
+    width: 60px;
+    font-size: 16px;
     font-weight: 310;
   }
+  
   .down_player #currentStart {
     margin: 0px 0px 0px 0px;
   }
+  
   .down_player .bar {
     position: relative;
-    width: 55%;
-    height: 10px;
+    width: 40%;
+    height: 8px;
     background: #fe2b0d;
-    margin: 0px 15px 0px 10px;
+    margin: 0px 10px 0px 10px;
   }
+  
   .down_player .bar .dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: purple;
     border-radius: 50%;
     left: 0%;
-    top: -4px;
+    top: -3px;
     transition: 1s linear;
   }
 
   .down_player .bar .dot::before {
       content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border: 1px solid purple;
     border-radius: 50%;
-    left: -6px;
+    left: -5px;
+    top: -5px;
     box-shadow: inset 0px 110px 3px purple;
   }
+  
   .down_player .vol {
-    position: relative;
-    width: 100px;
-    height: 5px;
-    margin-left: 50px;
-    background: #fe2b0d;
-    border-radius: 5%;
     display: none;
   }
+  
   .footer {
     background-color: red;
-    padding: 3.5em;
+    padding: 2em;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
+    max-height: none;
   }
 
   .copy-text {
@@ -852,10 +912,12 @@ h1:last-of-type span {
 
   .social {
     width: 100%;
-    max-width: 500px;
-    font-size: 50px;
+    max-width: 400px;
+    font-size: 35px;
     position: relative;
-    top: -150px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media screen and (max-height: 480px) {
@@ -956,8 +1018,8 @@ h1:last-of-type span {
   }
   .beats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px; /* Расстояние между элементами */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   .info {
     font-size: 14px;
