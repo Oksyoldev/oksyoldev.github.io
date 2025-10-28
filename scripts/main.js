@@ -121,8 +121,8 @@ const songs = [
     },
     {
         id:'8',
-        songName: `Null`,
-        poster: "images/7.jpg"
+        songName: `Hah`,
+        poster: "images/8.jpg"
     },
     {
         id:'9',
